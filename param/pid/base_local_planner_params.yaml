@@ -6,16 +6,16 @@ PidPlanner:
   
   # goal reached tolerance
   position_tolerance: 0.03
-  orientation_tolerance: 0.01
+  orientation_tolerance: 0.03
 
   # linear velocity
-  max_v: 1.0
+  max_v: 2.0
   min_v: 0.0
 
   # pid controller params
   linear_x:
-    pid: { p: 5.0, i: 1.0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
+    pid: { p: 4.3, i: 20.0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
   linear_y:
-    pid: { p: 5.0, i: 1.0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
+    pid: { p: 3.3, i: 16.9, d: 0.00001, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
   angular_z:
-    pid: { p: 4.0, i: 1.0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
+    pid: { p: 2.59, i: 9.4, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
