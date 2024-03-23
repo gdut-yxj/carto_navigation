@@ -1,6 +1,6 @@
 <launch>
   <!-- Arguments -->
-  <arg name="method" default="pid" doc="method type [pid, teb, eband, dwa]"/>
+  <arg name="method" default="pid" doc="method type [mpc, pid, teb, eband, dwa]"/>
   <!-- <arg name="cmd_vel_topic" default="/carto/cmd_vel" /> -->
   <arg name="cmd_vel_topic" default="/cmd_vel" />
   <arg name="odom_topic" default="/ep/odom" />
@@ -11,6 +11,7 @@
     <param if="$(eval 'eband' in arg('method'))" name="base_local_planner" value="eband_local_planner/EBandPlannerROS" />
     <param if="$(eval 'teb' in arg('method'))" name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
     <param if="$(eval 'dwa' in arg('method'))" name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+    <param if="$(eval 'mpc' in arg('method'))" name="base_local_planner" value="mpc_planner/MPCPlanner"/>
     <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
     <rosparam file="$(find carto_navigation)/param/$(arg method)/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find carto_navigation)/param/$(arg method)/costmap_common_params.yaml" command="load" ns="local_costmap" />
